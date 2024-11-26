@@ -1,5 +1,5 @@
-//   TWO SUM
-// > Medium
+// > TWO SUM
+// ! EASY
 
 // Hint
 // Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
@@ -36,6 +36,7 @@
  * @param {number} target
  * @return {number[]}
  */
+// ! NAIVE APPROACH
 //input: array of nums ex: [1, 2, 6, 3, 7]
 //output: and array of two nums that add up to target num ex: [2, 3] target = 5
 // var twoSum = function (nums, target) {
@@ -53,18 +54,9 @@
 
 // console.log(twoSum([1, 2, 6, 3, 7], 5)); // [1,3]
 
-// 🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳
-// 🌳
-// 🌳     🐝           🦝                 🌲
-// 🌳
-// 🌳     | | | |    🦋                🦩         🐕
-// 🌳     | | | |
-// 🌳      🐐            🌲                     🐧
-// 🌳
-// 🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳
-
 // > SOLVE IN O(n) time:
 
+// ! JOSH
 const twoSumskies = (nums, target) => {
   //create an object to store remainders (target minus current num of array)
   const cache = {};
@@ -76,7 +68,7 @@ const twoSumskies = (nums, target) => {
 
     if (cache.hasOwnProperty(nums[i])) {
       //if so return an array with value or property with current num key and the index of
-      console.log("found it");
+      console.log('found it');
       return [cache[nums[i]], i];
     }
 
@@ -90,14 +82,7 @@ const twoSumskies = (nums, target) => {
 
 console.log(twoSumskies([0, 2, 1, 3, 9], 10));
 
-// console.log(twoSumskies([1, 2, 6, 3, 7], 5));
-// // const inpArr = [1, 2, 6, 3, 7]
-// const myMap = new Map();
-// myMap.set("Josh", 30);
-// myMap.set("MJ", 29);
-// myMap.set("Aditi", 28);
-// console.log(myMap.has("MJ"));
-// console.log(myMap.get("MJ"));
+// ! ADITI
 
 // const twoSumskiesADITI = (nums, target) => {
 //   //create an object to store remainders (target minus current num of array)
@@ -119,16 +104,43 @@ console.log(twoSumskies([0, 2, 1, 3, 9], 10));
 
 // console.log(twoSumskiesADITI([1, 2, 6, 3, 7], 5));
 
-const newSum = (nums, target) => {
-  const obj = {};
-  for (let i = 0; i < nums.length; i++) {
-    let rem = target - nums[i];
-    if (obj.hasOwnProperty(rem)) {
-      return [obj[rem], i];
-    }
+//  ! ADITI 2
+// const newSum = (nums, target) => {
+//   const obj = {};
+//   for (let i = 0; i < nums.length; i++) {
+//     let rem = target - nums[i];
+//     if (obj.hasOwnProperty(rem)) {
+//       return [obj[rem], i];
+//     }
 
-    obj[nums[i]] = i;
-  }
-};
+//     obj[nums[i]] = i;
+//   }
+// };
 
-console.log(newSum([1, 2, 6, 3, 7], 5));
+// console.log(newSum([1, 2, 6, 3, 7], 5));
+
+// ! ATTEMPTS
+// const twoSumskies = (nums, target) => {
+//   //create an object to store remainders (target minus current num of array)
+//   const remainders = {};
+//   //iterate over array [1, 2, 6, 3, 7] target: 5
+//   for (let i = 0; i < nums.length; i++) {
+//     console.log(remainders);
+//     //calculate the remainder
+//     const currentRemainder = target - nums[i];
+
+//     if (remainders.hasOwnProperty(nums[i])) {
+//       //if so return property value
+//       console.log("found it");
+//       return [remainders[nums[i]], i];
+//     }
+
+//     //otherwise, create new property where remainder is value
+//     else {
+//       //   console.log("creating new prop");
+//       remainders[currentRemainder] = nums[i];
+//     }
+//   }
+// };
+
+// console.log(twoSumskies([1, 2, 6, 3, 7], 5));

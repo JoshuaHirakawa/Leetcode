@@ -1,4 +1,4 @@
-// 12. Integer to Roman // > MEDIUM
+// 12. Integer to Roman // * MEDIUM
 
 // Seven different symbols represent Roman numerals with the following values:
 
