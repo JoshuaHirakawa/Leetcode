@@ -22,4 +22,18 @@
 // 1 <= s.length, t.length <= 5 * 104
 // s and t consist of lowercase English letters.
 
-var isAnagram = function (s, t) {};
+const isAnagram = (s, t) => {
+  // check if strings have same length
+  if (s.length !== t.length) {
+    return false;
+  } else {
+    const str1 = s.split('').sort().join('');
+    const str2 = t.split('').sort().join('');
+    // console.log(str1);
+    // console.log(str2);
+    return str1 === str2;
+  }
+};
+
+console.log(isAnagram('rat', 'car'));
+console.log(isAnagram('fried', 'fired'));
